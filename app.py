@@ -2,22 +2,22 @@ import streamlit as st
 from PIL import Image, ImageEnhance
 from io import BytesIO
 
-# Page setup
-st.set_page_config(page_title="Simple Color Manipulator", page_icon="🎨", layout="centered")
+
+st.set_page_config(page_title="Simple Image Enhancer",layout="centered")
 
 st.title("🎨 Simple Color Manipulation Website")
 st.write("Upload an image and adjust its brightness, contrast, sharpness, or color easily!")
 
-# Upload image
+
 uploaded_file = st.file_uploader("📤 Upload an Image", type=["jpg", "jpeg", "png"])
 
 if uploaded_file:
-    # Convert image to RGB (fixes transparency issues)
+    
     img = Image.open(uploaded_file).convert("RGB")
     st.image(img, caption="Original Image", use_container_width=True)
 
-    # Enhancement controls
-    st.subheader("🧰 Enhancement Controls")
+
+    st.subheader(" Enhancement Controls")
     brightness = st.slider("Brightness", 0.5, 3.0, 1.0)
     contrast = st.slider("Contrast", 0.5, 3.0, 1.0)
     sharpness = st.slider("Sharpness", 0.5, 3.0, 1.0)
@@ -53,3 +53,4 @@ if uploaded_file:
 
 else:
     st.info("Please upload an image to get started!")
+
