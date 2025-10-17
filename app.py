@@ -21,7 +21,7 @@ if uploaded_file:
     brightness = st.slider("Brightness", 0.5, 3.0, 1.0)
     contrast = st.slider("Contrast", 0.5, 3.0, 1.0)
     sharpness = st.slider("Sharpness", 0.5, 3.0, 1.0)
-    color = st.slider("Color", 0.5, 3.0, 1.0)
+    color = st.slider("Colour", 0.5, 3.0, 1.0)
 
     enhancer = ImageEnhance.Brightness(img)
     img = enhancer.enhance(brightness)
@@ -33,7 +33,7 @@ if uploaded_file:
     img = enhancer.enhance(sharpness)
 
     enhancer = ImageEnhance.Color(img)
-    img = enhancer.enhance(colour)
+    img = enhancer.enhance(color)
 
     st.image(img, caption="Enhanced Image", use_container_width=True)
 
@@ -50,6 +50,7 @@ if uploaded_file:
 
 else:
     st.info("Please upload an image to get started!")
+
 
 
 
