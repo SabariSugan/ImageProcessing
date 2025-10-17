@@ -5,11 +5,11 @@ from io import BytesIO
 
 st.set_page_config(page_title="Simple Image Enhancer",layout="centered")
 
-st.title("🎨 Simple Color Manipulation Website")
+st.title("Simple Image Enhancer")
 st.write("Upload an image and adjust its brightness, contrast, sharpness, or color easily!")
 
 
-uploaded_file = st.file_uploader("📤 Upload an Image", type=["jpg", "jpeg", "png"])
+uploaded_file = st.file_uploader("Upload an Image", type=["jpg", "jpeg", "png"])
 
 if uploaded_file:
     
@@ -42,7 +42,7 @@ if uploaded_file:
     byte_im = buf.getvalue()
 
     st.download_button(
-        label="💾 Download Enhanced Image",
+        label="Download Enhanced Image",
         data=byte_im,
         file_name="enhanced_image.png",
         mime="image/png"
@@ -50,5 +50,6 @@ if uploaded_file:
 
 else:
     st.info("Please upload an image to get started!")
+
 
 
