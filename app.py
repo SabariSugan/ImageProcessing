@@ -6,7 +6,7 @@ from io import BytesIO
 st.set_page_config(page_title="Simple Image Enhancer",layout="centered")
 
 st.title("Simple Image Enhancer")
-st.write("Upload an image and adjust its brightness, contrast, sharpness, or color easily!")
+st.write("Upload an image and adjust its brightness, contrast, sharpness, or colour easily!")
 
 
 uploaded_file = st.file_uploader("Upload an Image", type=["jpg", "jpeg", "png"])
@@ -50,6 +50,7 @@ if uploaded_file:
 
 else:
     st.info("Please upload an image to get started!")
+
 
 
 
