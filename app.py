@@ -23,7 +23,6 @@ if uploaded_file:
     sharpness = st.slider("Sharpness", 0.5, 3.0, 1.0)
     color = st.slider("Color", 0.5, 3.0, 1.0)
 
-    # Apply effects step-by-step
     enhancer = ImageEnhance.Brightness(img)
     img = enhancer.enhance(brightness)
 
@@ -36,10 +35,8 @@ if uploaded_file:
     enhancer = ImageEnhance.Color(img)
     img = enhancer.enhance(color)
 
-    # Display enhanced image
     st.image(img, caption="Enhanced Image", use_container_width=True)
 
-    # Convert image to bytes for download
     buf = BytesIO()
     img.save(buf, format="PNG")
     byte_im = buf.getvalue()
@@ -53,4 +50,5 @@ if uploaded_file:
 
 else:
     st.info("Please upload an image to get started!")
+
 
