@@ -33,7 +33,7 @@ if uploaded_file:
     img = enhancer.enhance(sharpness)
 
     enhancer = ImageEnhance.Color(img)
-    img = enhancer.enhance(color)
+    img = enhancer.enhance(colour)
 
     st.image(img, caption="Enhanced Image", use_container_width=True)
 
@@ -50,6 +50,7 @@ if uploaded_file:
 
 else:
     st.info("Please upload an image to get started!")
+
 
 
 
